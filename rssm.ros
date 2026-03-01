@@ -1,0 +1,20 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  (asdf:load-system "com.djhaskin.rssm"))
+
+(defpackage :ros.script.rssm.3941919262
+  (:use :cl)
+  (:import-from #:com.djhaskin.rssm))
+
+(in-package :ros.script.rssm.3941919262)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (com.djhaskin.rssm:main argv))
+
+;;; vim: set ft=lisp lisp:

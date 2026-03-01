@@ -1,0 +1,31 @@
+# Build outputs
+/target/*
+*.abcl
+*.fasl
+*.dx32fsl
+*.dx64fsl
+*.lx32fsl
+*.lx64fsl
+*.x86f
+*.so
+*.dll
+*.exe
+
+# Editor save files, bookkeeping files
+*~
+.#*
+\#*
+.*#
+.*.sw[a-z]
+/.slime_paste
+
+# Generated executable
+/rssm
+
+# Lisp stuff
+/com.djhaskin.rssm
+/.repl/ros_history
+/.qlot/
+/systems/
+/.bundle-libs/
+/ocicl

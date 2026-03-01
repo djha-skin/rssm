@@ -1,0 +1,12 @@
+# rssm tdd lisp cliff roswell ocicl
+Project: RSS Manager (RSSM)
+Package: com.djhaskin.rssm
+Dependencies: CLIFF (CLI/Config), NRDL, OCICL (Package Manager), Parachute (Tests)
+Style: Strict 80-character line limit for .lisp, .ros, and .md files.
+Workflow: TDD (Docs first, Tests second, Impl third).
+Folders: One level only, no nesting.
+Targets: Newsboat (virtual feeds via queries/tags), RSSSavvy (JSON), OPML.
+Environment: Tmux (Pane 0 for REPL via 'ros run', Pane 1 for Goose CLI).
+Tools: Roswell (ros build) for self-contained executables.
+Documentation: README.md (Users), CONTRIBUTING.md (Devs), AGENTS.md (LLMs).
+
