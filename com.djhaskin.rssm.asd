@@ -9,7 +9,8 @@
                )
   :components ((:module "src"
           :components
-          ((:file "main"))))
+          ((:file "newsboat")
+           (:file "main"))))
   :description "RSS Manager - A tool for managing RSS feeds across Newsboat, RSSSavvy, and OPML formats"
   :in-order-to (
                 (test-op (test-op "com.djhaskin.rssm/tests"))))

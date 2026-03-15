@@ -25,6 +25,8 @@ cl-reexport-test, ghcr.io/ocicl/cl-reexport@sha256:c795feb3e3727a19e61797187eb31
 cl-utilities, ghcr.io/ocicl/cl-utilities@sha256:e5e0676a4e0627332a0fe64d56ed4f1890f0466d715a11e8d95561b4c2baa38f, cl-utilities-20240503-6b4de39/cl-utilities.asd
 cl_plus_ssl, ghcr.io/ocicl/cl_plus_ssl@sha256:d50fbbba38827e835eec2415744e0fb05a2a0bf4d44940cdc23922f15036efe5, cl-plus-ssl-20251220-499b2f5/cl+ssl.asd
 cl_plus_ssl.test, ghcr.io/ocicl/cl_plus_ssl@sha256:d50fbbba38827e835eec2415744e0fb05a2a0bf4d44940cdc23922f15036efe5, cl-plus-ssl-20251220-499b2f5/cl+ssl.test.asd
+com.djhaskin.cliff, ghcr.io/ocicl/com.djhaskin.cliff@sha256:9bff489ae2aa4a1dd7ca9697ff09a55b5542b710c4691e12f76fedfd852ba0cb, CLIFF-20251026-8095b8c/com.djhaskin.cliff.asd
+com.djhaskin.nrdl, ghcr.io/ocicl/com.djhaskin.nrdl@sha256:60012d38ec32d0ac4ed174948de9ee25880d115294e85580fc02090f515d0ad4, nrdl-20241021-a2c0023/com.djhaskin.nrdl.asd
 dexador, ghcr.io/ocicl/dexador@sha256:defc8d669790e22ac9a9eccf52fe14b10cf986402c7b32c0049df45f64a039e1, dexador-20250825-4db4b93/dexador.asd
 dexador-test, ghcr.io/ocicl/dexador@sha256:defc8d669790e22ac9a9eccf52fe14b10cf986402c7b32c0049df45f64a039e1, dexador-20250825-4db4b93/dexador-test.asd
 dexador-usocket, ghcr.io/ocicl/dexador@sha256:defc8d669790e22ac9a9eccf52fe14b10cf986402c7b32c0049df45f64a039e1, dexador-20250825-4db4b93/dexador-usocket.asd

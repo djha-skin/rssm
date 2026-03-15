@@ -1,0 +1,4 @@
+# Test Newsboat URLs file
+https://example.com/feed.xml "Example Feed"
+https://rss.example.org/rss "RSS Example" News
+https://atom.test.io/atom.xml "Atom Test" Tech
