@@ -1,6 +1,8 @@
 (defpackage #:com.djhaskin.rssm/newsboat
   (:use #:cl)
   (:import-from #:com.djhaskin.cliff)
+  (:import-from #:com.djhaskin.rssm/backend)
+  (:use #:com.djhaskin.rssm/backend)
   (:local-nicknames (#:alex #:alexandria))
   (:export #:parse-newsboat-line
            #:parse-newsboat-string
@@ -8,7 +10,10 @@
            #:render-newsboat-string
            #:newsboat-tokenize-with-quotes
            #:parse-quoted-token
-           #:parse-unquoted-token))
+           #:parse-unquoted-token
+           ;; Method definitions for generic functions
+           #:parse-feeds
+           #:render-feeds))
 
 (in-package #:com.djhaskin.rssm/newsboat)
 
@@ -126,3 +131,14 @@
           (mapcar (lambda (f)
                     (render-newsboat-line f xml-url-accessor title-accessor folder-accessor))
                   feeds)))
+
+;;; Method definitions for generic functions
+
+(defmethod parse-feeds ((format (eql :newsboat)) text &optional (feed-class 'feed))
+  (parse-newsboat-string text feed-class))
+
+(defmethod render-feeds ((format (eql :newsboat)) feeds
+                         &key (xml-url-accessor #'feed-xml-url)
+                           (title-accessor #'feed-title)
+                           (folder-accessor #'feed-folder))
+  (render-newsboat-string feeds xml-url-accessor title-accessor folder-accessor))

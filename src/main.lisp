@@ -1,37 +1,13 @@
 (defpackage #:com.djhaskin.rssm
   (:use #:cl)
   (:import-from #:com.djhaskin.cliff)
-  (:use #:com.djhaskin.rssm/newsboat)
+  (:import-from #:com.djhaskin.rssm/backend)
+  (:use #:com.djhaskin.rssm/backend)
   (:local-nicknames (#:alex #:alexandria)
                     (#:cliff #:com.djhaskin.cliff))
-  (:export #:main
-           #:feed))
+  (:export #:main))
 
 (in-package #:com.djhaskin.rssm)
-
-;;; Data Model
-
-(defclass feed ()
-  ((title
-    :initarg :title
-    :accessor feed-title
-    :initform nil
-    :documentation "The title of the RSS feed.")
-   (xml-url
-    :initarg :xml-url
-    :accessor feed-xml-url
-    :initform (error "Must provide xml-url")
-    :documentation "The URL of the RSS/Atom feed.")
-   (home-page-url
-    :initarg :home-page-url
-    :accessor feed-home-page-url
-    :initform nil
-    :documentation "The URL of the blog associated with the feed.")
-   (folder
-    :initarg :folder
-    :accessor feed-folder
-    :initform nil
-    :documentation "The one-level-deep folder where the feed resides.")))
 
 ;;; Helpers
 

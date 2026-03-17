@@ -9,7 +9,10 @@
                )
   :components ((:module "src"
           :components
-          ((:file "newsboat")
+          ((:module "backend"
+            :components
+            ((:file "backend")))
+           (:file "newsboat")
            (:file "main"))))
   :description "RSS Manager - A tool for managing RSS feeds across Newsboat, RSSSavvy, and OPML formats"
   :in-order-to (
