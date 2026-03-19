@@ -1,21 +1,36 @@
 ;;;; tests/backend.lisp
 ;;;;
 ;;;; Unit tests for the backend package.
-
 (defpackage #:com.djhaskin.rssm/tests/backend
-  (:use #:cl #:parachute)
-  (:local-nicknames (#:backend #:com.djhaskin.rssm/backend))
-  (:import-from #:com.djhaskin.rssm/backend
-                #:feed #:feed-title #:feed-xml-url #:feed-home-page-url #:feed-folder))
+  (:use #:cl)
+  (:import-from
+    #:org.shirakumo.parachute
+    #:define-test
+    #:true
+    #:false
+    #:fail
+    #:is
+    #:isnt
+    #:is-values
+    #:isnt-values
+    #:of-type
+    #:finish
+    #:test)
+  (:import-from
+    #:com.djhaskin.rssm/backend)
+  (:local-nicknames
+    (#:parachute #:org.shirakumo.parachute)
+    (#:backend #:com.djhaskin.rssm/backend)))
+
 
 (in-package #:com.djhaskin.rssm/tests/backend)
 
-(deftest feed-creation
+(define-test feed-creation
   "Test that a feed can be created with required xml-url."
-  (let ((f (make-instance 'feed :title "Test Feed" :xml-url "http://example.com/feed.xml")))
-    (is.equal "Test Feed" (feed-title f))
-    (is.equal "http://example.com/feed.xml" (feed-xml-url f))))
+  (let ((f (make-instance 'backend:feed :title "Test Feed" :xml-url "http://example.com/feed.xml")))
+    (is equal "Test Feed" (backend:feed-title f))
+    (is equal "http://example.com/feed.xml" (backend:feed-xml-url f))))
 
-(deftest feed-error-without-xml-url
+(define-test feed-error-without-xml-url
   "Test that creating a feed without xml-url signals an error."
-  (is.error 'error (make-instance 'feed :title "Test Feed")))
+  (fail (make-instance 'backend:feed :title "Test Feed")))
