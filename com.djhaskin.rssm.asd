@@ -5,14 +5,15 @@
   :depends-on (
                "alexandria"
                "com.djhaskin.cliff"
+               "plump"
                "parachute"
                )
   :components ((:module "src"
           :components
-          ((:module "backend"
-            :components
-            ((:file "backend")))
+          ((:file "backend")
            (:file "newsboat")
+           (:file "opml")
+           (:file "rsssavvy")
            (:file "main"))))
   :description "RSS Manager - A tool for managing RSS feeds across Newsboat, RSSSavvy, and OPML formats"
   :in-order-to (
@@ -24,10 +25,12 @@
   :license "MIT"
   :depends-on (
                "com.djhaskin.rssm"
-               "parachute")
+               "parachute"
+               )
   :components ((:module "tests"
                 :components
-                ((:file "main"))))
+                ((:file "main")
+                 (:file "backend"))))
   :description "Test system for RSSM"
   :perform (asdf:test-op (op c)
                          (uiop:symbol-call

@@ -2,6 +2,11 @@
 
 This document is exclusively for LLM contributors working on RSSM.
 
+> **Important**: Please make sure to read `CONTRIBUTING.md` before
+> starting any work on this project. It contains essential information
+> about tooling, code style, and common workflows that apply to all
+> contributors, including AI agents.
+
 ## Project Overview
 
 RSS Manager (rssm) is a command-line tool for managing RSS feeds

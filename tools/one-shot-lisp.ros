@@ -1,0 +1,40 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros +Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf))
+
+(defpackage :ros.script.one-shot-lisp
+  (:use :cl))
+(in-package :ros.script.one-shot-lisp)
+
+(defun main (&rest args)
+  "Execute arbitrary Lisp code passed as the first argument.
+   The debugger is disabled to prevent shell hanging on errors,
+   but backtraces are printed for debugging."
+  (let ((code (first args)))
+    (when code
+      ;; Set up a custom debugger hook that prints backtrace and exits
+      (let ((old-hook sb-ext:*invoke-debugger-hook*))
+        (unwind-protect
+             (progn
+               (setf sb-ext:*invoke-debugger-hook*
+                     #'(lambda (condition continue)
+                         (declare (ignore continue))
+                         (format *error-output*
+                                 "~%Error: ~a~%"
+                                 condition)
+                         (format *error-output* "~%Backtrace:~%")
+                         (sb-debug:backtrace 20 *error-output*)
+                         (force-output *error-output*)
+                         (sb-ext:exit :code 1)))
+               (format t "Evaluating: ~a~%" code)
+               (let ((result (eval (read-from-string code))))
+                 (when result
+                   (format t "Result: ~a~%" result))))
+          (setf sb-ext:*invoke-debugger-hook* old-hook)))))
+  (sb-ext:exit :code 0))
+
+;;; vim: set ft=lisp lisp:
