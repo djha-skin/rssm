@@ -6,6 +6,8 @@
                "alexandria"
                "com.djhaskin.cliff"
                "plump"
+               "str"
+               "cl-ppcre"
                )
   :components ((:module "src"
           :components
@@ -28,8 +30,10 @@
   :components ((:module "tests"
                 :components
                 ((:file "main")
-                 (:file "backend"))))
+                 (:file "backend")
+                 (:file "newsboat"))))
   :description "Test system for RSSM"
  :perform (asdf:test-op (op c)
                     (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests)
-                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/backend)))
+                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/backend)
+                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/newsboat)))
