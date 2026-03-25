@@ -2,37 +2,43 @@
 ;;;;
 ;;;; Newsboat format support for RSSM.
 
+#+(or)
+(progn
+  (asdf:load-system "com.djhaskin.rssm"))
 (defpackage #:com.djhaskin.rssm/newsboat
   (:use #:cl)
-  (:import-from #:com.djhaskin.cliff)
   (:import-from #:com.djhaskin.rssm/backend)
-  (:import-from #:cl-ppcre)
-  (:import-from #:str)
-  (:use #:com.djhaskin.rssm/backend)
-  (:local-nicknames (#:alex #:alexandria
-                     #:com.djhaskin.rssm/backend #:backend))
-  (:export #:parse-feeds-file
-           #:render-feeds-file))
+  (:local-nicknames (#:backend #:com.djhaskin.rssm/backend))
+  (:export #:parse-feeds
+           #:render-feeds))
 
 (in-package #:com.djhaskin.rssm/newsboat)
+
+
+#+(or)
+(progn
+  (with-input-from-string (s "\"query:folder:unread = \\\"yes\\\" and tags # \\\"tag1\\\"\"")
+    (read-quoted s)))
 
 (defun read-quoted (strm)
   "Reads a quoted string from the newsboat file.
   Assumes the leading quote has already been read."
+  (assert (char= #\" (read-char strm))) ; Skip the opening quote
   (loop for c = (read-char strm) then (read-char strm)
-        for in-escape = nil
-        for result = (make-array 10 :fill-pointer t :adjustable t :element-type
+        with in-escape = nil
+        with result = (make-array 10 :fill-pointer 0 :adjustable t :element-type
                                  'character)
-        while (not (char= c #\"))
         do
         (cond (in-escape
                (setf in-escape nil)
                (vector-push-extend c result))
+              ((char= c #\")
+               (loop-finish))
               ((char= c #\\)
                (setf in-escape t))
               (:else
                (vector-push-extend c result)))
-        return (coerce result 'string)))
+        finally (return (coerce result 'string))))
 
 (defun next-token (strm)
   "

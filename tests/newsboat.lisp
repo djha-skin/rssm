@@ -26,7 +26,33 @@
     (#:newsboat #:com.djhaskin.rssm/newsboat)
     (#:backend #:com.djhaskin.rssm/backend)))
 
+(make-array 10 :fill-pointer 0 :adjustable t :element-type 'character)
+(vector-push-extend #\a *)
+(coerce ** 'string)
+(equal * "a")
+(string= ** "a")
+
+
+
 (in-package #:com.djhaskin.rssm/tests/newsboat)
+
+  (with-input-from-string (s "\"query:folder:unread = \\\"yes\\\" and tags # \\\"tag1\\\"\"")
+    (read-quoted s)))
+
+#+(or)
+(parachute:test *)
+
+(define-test read-quoted-simple
+  "Test reading a simple quoted string."
+  (is equal (with-input-from-string (s "\"Hello World\"")
+              (newsboat::read-quoted s)) "Hello World")
+  (with-input-from-string (s "")
+    (fail (newsboat::read-quoted s)))
+  (with-input-from-string (s "\"Unclosed string")
+    (fail (newsboat::read-quoted s)))
+    (with-input-from-string (s "\"Escaped \\\"quote\\\" inside\"")
+      (is equal (newsboat::read-quoted s) "Escaped \"quote\" inside")))
+
 
 ;;; ============================================================================
 ;;; Tokenization Tests

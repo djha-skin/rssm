@@ -25,11 +25,24 @@
 
 (in-package #:com.djhaskin.rssm/tests/backend)
 
+(define-test backend-suite)
+
 (define-test feed-creation
-  "Test that a feed can be created with required xml-url."
-  (let ((f (make-instance 'backend:feed :title "Test Feed" :xml-url "http://example.com/feed.xml")))
+  :parent backend-suite
+  (let ((f (make-instance 'backend:feed :title "Test Feed" :xml-url
+                          "http://example.com/feed.xml")))
     (is equal "Test Feed" (backend:feed-title f))
     (is equal "http://example.com/feed.xml" (backend:feed-xml-url f))))
+
+(defmethod backend:parse-feeds ((fmt (eql :test)) strm)
+    "Test implementation of parse-feeds that always returns the same feed."
+    (declare (ignore fmt))
+    (let ((feed (make-instance 'backend:feed :title "Test Feed" :xml-url
+                                 "http://example.com/feed.xml")))
+        (list (cons "Test Folder" (list feed)))))
+
+
+(deftest 
 
 (define-test feed-error-without-xml-url
   "Test that creating a feed without xml-url signals an error."

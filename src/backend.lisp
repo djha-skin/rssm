@@ -5,7 +5,6 @@
 
 (defpackage #:com.djhaskin.rssm/backend
   (:use #:cl)
-  (:local-nicknames (#:alex #:alexandria))
   (:export
     #:feed
     #:feed-title
