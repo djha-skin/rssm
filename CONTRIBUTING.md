@@ -2,18 +2,12 @@
 
 This document is for human and AI developers working on this project.
 
-## Development Workflow
-
-This project adheres to **Test-Driven Development (TDD)**:
-
-1. **Documentation First**: Describe the feature in `README.md`.
-2. **Tests Second**: Implement tests for the feature in `tests/`.
-3. **Implementation Last**: Add the feature's logic in `src/`.
-
 ## Code Style and Conventions
 
 - **Line Length**: No files—Lisp, Markdown, or Roswell scripts—should
-  exceed **80 characters** per line. Stick to this rule.
+  exceed **80 characters** per line.
+- **Trailing Whitespace**: Stick to this rule. Please do not commit files with
+  trailing whitespace in them.
 - **ASDF System**: Use the reverse-domain ASDF package name
   (`com.djhaskin.rssm`).
 - **Dependencies**: Managed via **OCICL**.
@@ -51,37 +45,6 @@ when structuring scripts.
 This section describes the libraries and build tools used in `rssm`.
 Several of them take an unusual approach to their domain and will
 surprise contributors who are not already familiar with them.
-
-### One-Shot Lisp Scripts
-
-For executing arbitrary Lisp code in a one-shot manner without risking
-shell hangs from debugger invocations, use the `one-shot-lisp.ros`
-script located in `tools/`.
-
-This script:
-- Accepts arbitrary Lisp code as its first argument
-- Disables the debugger to prevent interactive prompts on errors
-- Prints errors and exits with a non-zero status code
-- Uses `ros +Q` to disable Quicklisp
-
-**Usage**:
-
-```bash
-./tools/one-shot-lisp.ros '(+ 1 2 3)'
-./tools/one-shot-lisp.ros '(defun hello () (format t "Hello~%")) (hello)'
-```
-
-**Example output on error**:
-
-```
-Evaluating: (error "test error")
-
-Error: test error
-```
-
-The script exits with status code 1 on error, 0 on success. This makes
-it suitable for scripting and agentic workflows where unattended
-execution is required.
 
 ### Roswell
 
