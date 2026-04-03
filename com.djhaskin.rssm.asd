@@ -3,10 +3,9 @@
   :author "Daniel Jay Haskin"
   :license "MIT"
   :depends-on (
-               "alexandria"
+               "serapeum"
                "com.djhaskin.cliff"
                "plump"
-               "str"
                "cl-ppcre"
                )
   :components ((:module "src"

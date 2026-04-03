@@ -27,18 +27,24 @@
 #+(or)
 (progn
   (asdf:load-system "com.djhaskin.rssm"))
+
 (defpackage #:com.djhaskin.rssm/newsboat
   (:use #:cl)
   (:import-from #:com.djhaskin.rssm/backend)
-  ; Grap serapeum
   (:import-from #:serapeum)
   (:import-from #:quri
-    #:make-uri
-    #:string-prefix-p)
+    #:make-uri)
   (:local-nicknames (#:backend #:com.djhaskin.rssm/backend)
                     (#:util #:serapeum/bundle))
-  (:export #:parse-feeds
-           #:render-feeds))
+  (:export #:newsboat-feed
+              #:newsboat-tag
+              #:newsboat-tag-hidden
+              #:newsboat-tag-title
+              #:newsboat-tag-value
+              #:newsboat-feed-url
+              #:newsboat-feed-tags
+              #:concrete-feed-p
+              #:newsboat-to-generic))
 
 (in-package #:com.djhaskin.rssm/newsboat)
 
@@ -68,47 +74,68 @@
                (vector-push-extend c result)))
         finally (return (coerce result 'string))))
 
-(defun render-quoted (strm)
+#+(or)
+(progn
+  (with-output-to-string (s)
+    (render-quoted s "This is a \"test\" string with \\ backslashes."))
+  (with-output-to-string (s)
+    (render-quoted s "SimpleString"))
+  (with-output-to-string (s)
+    (render-quoted s "String with a backslash at the end\\"))
+  (with-output-to-string (s)
+    (render-quoted s "String with a quote at the end\""))
+  (with-output-to-string (s)
+    (render-quoted s "")))
+
+(defun render-quoted (strm str)
   "Quotes a string for use in the newsboat URL file."
     (format strm "\"")
     (loop for c across str
           do
           (cond ((char= c #\")
-                 (format out "\\\""))
+                 (format strm "\\\""))
                 ((char= c #\\)
-                 (format out "\\\\"))
+                 (format strm "\\\\"))
                 (:else
-                 (format out "~a" c))))
-    (format out "\""))
+                 (format strm "~a" c))))
+    (format strm "\""))
 
 (defclass newsboat-tag ()
   ((hidden
     :initarg :hidden
     :accessor newsboat-tag-hidden
     :initform nil
+    :type boolean
     :documentation "Whether this tag is hidden.")
    (custom-name
     :initarg :title
     :accessor newsboat-tag-title
+    :type boolean
     :initform nil
     :documentation "Whether or not the tag is a custom name.")
    (value
     :initarg :value
     :accessor newsboat-tag-value
     :initform nil
-    :documentation "The value of the tag.")))
+    :type string
+    :documentation "The value of the tag. May or may not be the empty string.")))
 
 (defclass newsboat-feed ()
   ((url
      :initarg :url
      :accessor newsboat-feed-url
      :initform nil
+     :type quri:uri
      :documentation "The URL of the RSS feed or virtual feed query.")
    (tags
      :initarg :tags
      :accessor newsboat-feed-tags
      :initform nil
+     :type list
      :documentation "The list of tags associated with this feed.")))
+
+
+;;; Spot-check bookmark
 
 (defun next-token (strm)
   "
