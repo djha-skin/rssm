@@ -16,9 +16,7 @@
     #:parse-feeds-string
     #:render-feeds
     #:render-feeds-file
-    #:render-feeds-string
-    #:add-feed
-    #:rm-feed))
+    #:render-feeds-string))
 
 (in-package #:com.djhaskin.rssm/backend)
 
@@ -47,7 +45,7 @@
 (defgeneric parse-feeds (fmt strm)
   (:documentation "
     Parse feeds from a stream STRM in the given format FMT,
-    a keyword symbol. Returns an alist whose keys are folder
+    a keyword symbol. Returns a hash table whose keys are folder
     name strings and whose values are lists of FEED objects.
     "))
 
@@ -69,7 +67,7 @@
 (defgeneric render-feeds (fmt feeds strm)
   (:documentation "
     Render FEEDS to stream STRM in format FMT.
-    FEEDS is an alist of folder-name -> list-of-feed.
+    FEEDS is a hash table of folder-name -> list-of-feed.
     FMT is a keyword symbol.  Returns nothing.
     "))
 
@@ -85,24 +83,3 @@
   "Render FEEDS to a string in format FMT."
   (with-output-to-string (strm)
     (render-feeds fmt feeds strm)))
-
-(defun add-feed (feeds feed &optional (default-dir ""))
-  "Add FEED to the FEEDS alist.
-  If the feed's folder is nil, use DEFAULT-DIR.
-  Returns the (possibly new) alist."
-  (let* ((dir (or (feed-folder feed) default-dir))
-         (cell (assoc dir feeds :test #'string=)))
-    (if cell
-        (progn
-          (pushnew feed (cdr cell))
-          feeds)
-        (acons dir (list feed) feeds))))
-
-(defun rm-feed (feeds feed)
-  "Remove FEED from the FEEDS alist. Returns the alist."
-  (let* ((dir (feed-folder feed))
-         (cell (assoc dir feeds :test #'string=)))
-    (when cell
-      (setf (cdr cell)
-            (remove feed (cdr cell))))
-    feeds))

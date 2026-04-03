@@ -41,9 +41,6 @@
                                  "http://example.com/feed.xml")))
         (list (cons "Test Folder" (list feed)))))
 
-
-(deftest 
-
 (define-test feed-error-without-xml-url
   "Test that creating a feed without xml-url signals an error."
   (fail (make-instance 'backend:feed :title "Test Feed")))

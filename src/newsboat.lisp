@@ -12,7 +12,7 @@
 ;;;; `~TitleOfFeed`, to indicate that they are "custom names" of the feed. The
 ;;;; tags may be prepended by `!` to indicate that within that tag group, the
 ;;;; feed is hidden. A single `!` without any other part of the tag name coming
-;;;; after it indicates that the feed should be hidden everywhere. Finally, anbcy
+;;;; after it indicates that the feed should be hidden everywhere. Finally, any
 ;;;; of these tokens can be quoted using double quotes with
 ;;;; quotes-within-quotes backslach-escaped to allow for spaces within the
 ;;;; tokens.
@@ -36,7 +36,7 @@
     #:make-uri
     #:string-prefix-p)
   (:local-nicknames (#:backend #:com.djhaskin.rssm/backend)
-                    (#:s #:serapeum))
+                    (#:util #:serapeum/bundle))
   (:export #:parse-feeds
            #:render-feeds))
 
@@ -178,6 +178,7 @@
                  :folder (or (some (lambda (tag)
                                     (and
                                      (not (newsboat-tag-custom-name tag))
+                                     (not (eql (length (newsboat-tag-value tag)) 0))
                                      (newsboat-tag-value tag)))
                                   (newsboat-feed-tags feed))
                             nil)))
@@ -186,7 +187,7 @@
   "
   Reads the next line from the newsboat URL file, returning what it finds.
   "
-  (let ((line-tokens
+  (util:if-let ((line-tokens
           (loop for token = (next-token strm) then (next-token strm)
                 while token
                 collect token)))
@@ -196,10 +197,16 @@
        :tags (mapcar #'token-to-tag (cdr line-tokens)))))
 
 (defmethod backend:parse-feeds ((fmt (eql :newsboat)) strm)
-  (loop for newsfeed = (read-next-line strm)
+  (loop with feeds = (make-hash-table :test #'string=)
+        for newsfeed = (read-next-line strm)
         while newsfeed
         if (concrete-feed-p newsfeed)
-        collect (newsboat-to-generic newsfeed)))
+        do
+        (let* ((backend-feed (newsboat-to-generic newsfeed))
+               (folder (backend:feed-folder backend-feed)))
+          (pushnew backend-feed (gethash folder feeds)))
+        finally
+        (return feeds)))
 
 (defmethod backend:render-feeds ((fmt (eql :newsboat)) feeds strm)
     (loop for (folder . folder-feeds) in feeds
@@ -208,11 +215,11 @@
                 folder folder)
         (loop for feed in folder-feeds
             do
-            (render-quoted strm (feed-xml-url feed))
+            (render-quoted strm (backend:feed-xml-url feed))
             (format strm " ")
-            (loop for 
+            (loop for
 
             (format strm "~a" feed-xml-url)
-            (when (feed-title feed)
-              (format strm " \"~~~a\"" (feed-title feed)))
-            (format strm " \"~a\"" (feed-folder feed)))))
+            (when (backend:feed-title feed)
+              (format strm " \"~~~a\"" (backend:feed-title feed)))
+            (format strm " \"~a\"" (backend:feed-folder feed)))))
