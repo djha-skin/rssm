@@ -50,11 +50,8 @@ panes:
 
 ### Interaction Procedure
 
-1. **Read First**: Use `tmux capture-pane -t 0 -p` to see the current
-   REPL status before acting.
-2. **Start REPL**: If not running, send `ros run` to pane 0.
-3. **Eval Lisp**: Send expressions to pane 0 using `tmux send-keys`.
-4. **Exit REPL**: Use `(ros:quit)` or `(sb-ext:exit)`.
+Use the `tmux-repl-mcp` MCP tool to interact with the repl. It will have been
+prepared for you by running `clrepl` in pane 0.
 
 ## Building the Project
 

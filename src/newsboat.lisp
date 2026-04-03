@@ -209,7 +209,8 @@
         (return feeds)))
 
 (defmethod backend:render-feeds ((fmt (eql :newsboat)) feeds strm)
-    (loop for (folder . folder-feeds) in feeds
+  (loop for folder being the hash-keys of feeds
+        using (hash-value folder-feeds)
         do
         (format strm "\"query:~a:unread = \\\"yes\\\" and tags # \\\"~a\\\"\"~%"
                 folder folder)
@@ -217,9 +218,6 @@
             do
             (render-quoted strm (backend:feed-xml-url feed))
             (format strm " ")
-            (loop for
-
-            (format strm "~a" feed-xml-url)
             (when (backend:feed-title feed)
               (format strm " \"~~~a\"" (backend:feed-title feed)))
             (format strm " \"~a\"" (backend:feed-folder feed)))))
