@@ -32,8 +32,6 @@
   (:use #:cl)
   (:import-from #:com.djhaskin.rssm/backend)
   (:import-from #:serapeum)
-  (:import-from #:quri
-    #:make-uri)
   (:local-nicknames (#:backend #:com.djhaskin.rssm/backend)
                     (#:util #:serapeum/bundle))
   (:export #:newsboat-feed
@@ -89,16 +87,18 @@
 
 (defun render-quoted (strm str)
   "Quotes a string for use in the newsboat URL file."
-    (format strm "\"")
-    (loop for c across str
-          do
-          (cond ((char= c #\")
-                 (format strm "\\\""))
-                ((char= c #\\)
-                 (format strm "\\\\"))
-                (:else
-                 (format strm "~a" c))))
-    (format strm "\""))
+  (write-char #\" strm)
+  (loop for c across str
+        do
+        (cond ((char= c #\")
+               (write-char #\\ strm)
+               (write-char #\" strm))
+              ((char= c #\\)
+               (write-char #\\ strm)
+               (write-char #\\ strm))
+              (t
+               (write-char c strm))))
+  (write-char #\" strm))
 
 (defclass newsboat-tag ()
   ((hidden
@@ -116,7 +116,7 @@
    (value
     :initarg :value
     :accessor newsboat-tag-value
-    :initform nil
+    :initform (error "Need to provide a value for newsboat-tag")
     :type string
     :documentation "The value of the tag. May or may not be the empty string.")))
 
@@ -125,7 +125,6 @@
      :initarg :url
      :accessor newsboat-feed-url
      :initform nil
-     :type quri:uri
      :documentation "The URL of the RSS feed or virtual feed query.")
    (tags
      :initarg :tags
@@ -138,57 +137,67 @@
 ;;; Spot-check bookmark
 
 (defun next-token (strm)
-  "
-  Reads the next 'thing' in the newsboat URL file.
-  "
+  "Reads the next token from the newsboat URL file line.
+  Returns NIL at end-of-line or end-of-file."
   (let ((c (read-char strm nil :eof)))
-    (cond ((or
-             (eql c :eof)
-             (char= c #\Newline))
-             nil)
+    (cond ((or (eql c :eof)
+               (char= c #\Newline))
+           nil)
+          ((char= c #\Space)
+           (next-token strm))
           ((char= c #\")
+           (unread-char c strm)
            (read-quoted strm))
-          (:else
-           (loop for c = c then (read-char strm nil :eof)
-                 while (and
-                         (not (eql c :eof))
-                         (not (char= c #\Newline))
-                         (not (char= c #\Space)))
-                 collect c into chars
-                 finally (return (coerce chars 'string)))))))
+          (t
+           (loop with chars = (make-array 16
+                                :fill-pointer 1
+                                :adjustable t
+                                :element-type 'character
+                                :initial-element c)
+                 for next = (read-char strm nil :eof)
+                 while (and (not (eql next :eof))
+                            (not (char= next #\Newline))
+                            (not (char= next #\Space)))
+                 do (vector-push-extend next chars)
+                 finally
+                 (when (and (not (eql next :eof))
+                            (char= next #\Newline))
+                   (unread-char next strm))
+                 (return (coerce chars 'string)))))))
 
 (defun token-to-tag (token)
-    "
-    Converts a newsboat URL file token into a newsboat-tag object.
-    "
-    (let ((hidden nil)
-          (custom-name nil)
-          (value nil)
-          (next-spot 0))
-      (when (or (char= (aref token next-spot) #\!)
-                (char= (aref token next-spot) #\~))
-        (if (char= (aref token 0) #\!)
-            (setf hidden t)
-            (setf custom-name t))
-        (setf next-spot (1+ next-spot)))
-      (when (or (char= (aref token next-spot) #\!)
-                (char= (aref token next-spot) #\~))
-        (if (char= (aref token 0) #\!)
-            (setf hidden t)
-            (setf custom-name t))
-        (setf next-spot (1+ next-spot)))
-      (setf value (subseq token next-spot))
-      (make-instance 'newsboat-tag
+  "Converts a newsboat URL file token into a newsboat-tag object.
+  Prefix characters:
+    ~  marks the tag as a custom feed title
+    !  marks the tag as hidden
+  Both prefixes may appear in either order before the value."
+  (let ((hidden nil)
+        (custom-name nil)
+        (next-spot 0)
+        (len (length token)))
+    (when (and (< next-spot len)
+               (or (char= (aref token next-spot) #\!)
+                   (char= (aref token next-spot) #\~)))
+      (if (char= (aref token next-spot) #\!)
+          (setf hidden t)
+          (setf custom-name t))
+      (setf next-spot (1+ next-spot)))
+    (when (and (< next-spot len)
+               (or (char= (aref token next-spot) #\!)
+                   (char= (aref token next-spot) #\~)))
+      (if (char= (aref token next-spot) #\!)
+          (setf hidden t)
+          (setf custom-name t))
+      (setf next-spot (1+ next-spot)))
+    (make-instance 'newsboat-tag
                    :hidden hidden
-                   :custom-name custom-name
-                   :value value)))
+                   :title custom-name
+                   :value (subseq token next-spot))))
 
 (defun concrete-feed-p (feed)
-  "
-  Returns true if the feed is a virtual feed query, false otherwise.
-  "
-
-  (not (string-prefix-p "query:" (newsboat-feed-url feed))))
+  "Returns true if the feed is a real feed, not a virtual query."
+  (let ((url (newsboat-feed-url feed)))
+    (not (util:string-prefix-p "query:" url))))
 
 (defun newsboat-to-generic (feed)
   "
@@ -196,18 +205,22 @@
   "
 
   (make-instance 'backend:feed
-                 :title (or (some (lambda (tag)
-                                    (and (newsboat-tag-title tag)
-                                         (newsboat-tag-value tag)))
-                                  (newsboat-feed-tags feed))
+                 :title (or (some
+                              (lambda (tag)
+                                (and (newsboat-tag-title tag)
+                                     (newsboat-tag-value tag)))
+                              (newsboat-feed-tags feed))
                             nil)
                  :xml-url (newsboat-feed-url feed)
-                 :folder (or (some (lambda (tag)
-                                    (and
-                                     (not (newsboat-tag-custom-name tag))
-                                     (not (eql (length (newsboat-tag-value tag)) 0))
-                                     (newsboat-tag-value tag)))
-                                  (newsboat-feed-tags feed))
+                 :folder (or (some
+                               (lambda (tag)
+                                 (and
+                                  (not (newsboat-tag-title tag))
+                                  (not (eql
+                                        (length (newsboat-tag-value tag))
+                                        0))
+                                  (newsboat-tag-value tag)))
+                               (newsboat-feed-tags feed))
                             nil)))
 
 (defun read-next-line (strm)
@@ -215,16 +228,17 @@
   Reads the next line from the newsboat URL file, returning what it finds.
   "
   (util:if-let ((line-tokens
-          (loop for token = (next-token strm) then (next-token strm)
-                while token
-                collect token)))
+                 (loop for token = (next-token strm)
+                         then (next-token strm)
+                       while token
+                       collect token)))
     (make-instance
       'newsboat-feed
-       :url (quri:make-uri (car line-tokens))
+       :url (car line-tokens)
        :tags (mapcar #'token-to-tag (cdr line-tokens)))))
 
 (defmethod backend:parse-feeds ((fmt (eql :newsboat)) strm)
-  (loop with feeds = (make-hash-table :test #'string=)
+  (loop with feeds = (make-hash-table :test 'equal)
         for newsfeed = (read-next-line strm)
         while newsfeed
         if (concrete-feed-p newsfeed)

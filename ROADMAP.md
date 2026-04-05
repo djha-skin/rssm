@@ -8,15 +8,55 @@ RSS Manager (RSSM).
 The project is initialized with the basic structure, ASDF systems,
 and build scripts using Roswell, OCICL, and CLIFF.
 
+### Completed Work
+
+- **`src/backend.lisp`**: Core abstract backend types and generic
+  function stubs (`parse-feeds`, `render-feeds`) — stable, no changes
+  needed.
+- **`src/newsboat.lisp`**: Newsboat `urls` file parser and renderer —
+  fully implemented and compiling cleanly. Three bugs were found and
+  fixed:
+  - `token-to-tag` used wrong initarg (`:custom-name` instead of
+    `:title`) when constructing `newsboat-tag` instances.
+  - `token-to-tag` had an out-of-bounds `aref` on bare `"!"` tokens
+    (no bounds check before indexing `next-spot`).
+  - `parse-feeds :newsboat` used `#'string=` (function object) as
+    `:test` in `make-hash-table`; fixed to `'equal`.
+- **`tests/newsboat.lisp`**: Full unit test suite written for
+  `src/newsboat.lisp`. 66 assertions, all passing. Covers:
+  - `read-quoted` (6 tests)
+  - `render-quoted` (4 tests)
+  - Round-trip `read-quoted` / `render-quoted` (2 tests)
+  - `next-token` (6 tests)
+  - `token-to-tag` (7 tests)
+  - `concrete-feed-p` (2 tests)
+  - `newsboat-to-generic` (4 tests)
+  - `read-next-line` (4 tests)
+  - `parse-feeds :newsboat` (6 tests)
+  - `render-feeds :newsboat` (5 tests)
+
+### Next Up
+
+- **`src/opml.lisp`**: Implement OPML import/export using Plump.
+  Needs both `parse-feeds :opml` and `render-feeds :opml` methods,
+  plus unit tests in `tests/opml.lisp`.
+- **`src/rsssavvy.lisp`**: RSSSavvy JSON import/export.
+  Needs both `parse-feeds :rsssavvy` and `render-feeds :rsssavvy`
+  methods, plus unit tests in `tests/rsssavvy.lisp`.
+- **`src/main.lisp`**: Wire up the CLI via CLIFF. Subcommands for
+  format conversion (e.g., `rssm export --from newsboat --to opml`).
+  Needs integration tests once backends are stable.
+
 ## Features
 
-- [ ] **Newsboat Format Parsing**
+- [x] **Newsboat Format Parsing**
   - Parse `urls` files.
   - Handle virtual feeds, queries, and tags.
+  - Unit tests (66 passing).
 - [ ] **RSSSavvy JSON Support**
   - Import/Export functionality for RSSSavvy's JSON structure.
 - [ ] **OPML Support**
-  - Standard OPML import/export.
+  - Standard OPML import/export (Plump-based).
 - [ ] **Folder Management**
   - Implement single-level folder support across all formats.
 - [ ] **Automated Feed Cleanup**
@@ -29,3 +69,6 @@ and build scripts using Roswell, OCICL, and CLIFF.
   - Export feed lists from any of the three target formats to another.
 - [ ] **CLIFF Integration**
   - Fully functional CLI with configuration file support.
+
+
+---

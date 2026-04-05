@@ -48,10 +48,17 @@ panes:
 - **Pane 1**: Goose CLI (this session).
 - **Pane 2**: Manual user commands.
 
-### Interaction Procedure
+### Running Lisp
 
-Use the `tmux-repl-mcp` MCP tool to interact with the repl. It will have been
-prepared for you by running `clrepl` in pane 0.
+There are two good ways to interact with or run arbitrary lisp code. One is to
+use `tools/one-shot-lisp.ros`, and the other is to use the `cl-mcp` MCP tool.
+Both will be at your disposal.
+
+Example run:
+
+```
+tools/one-shot-lisp.ros '(+ 1 3)'
+```
 
 ## Building the Project
 
