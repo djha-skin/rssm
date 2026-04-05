@@ -261,4 +261,4 @@
             (format strm " ")
             (when (backend:feed-title feed)
               (format strm " \"~~~a\"" (backend:feed-title feed)))
-            (format strm " \"~a\"" (backend:feed-folder feed)))))
+            (format strm " \"~a\"~%" (backend:feed-folder feed)))))

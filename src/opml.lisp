@@ -34,15 +34,17 @@
 
 (defun outline-feed-p (node)
   "Return true if a node is a feed outline (has xmlUrl)."
-  (and (string-equal (plump:tag-name node) "outline")
+  (and (plump:element-p node)
+       (string-equal (plump:tag-name node) "outline")
        (plump:attribute node "xmlUrl")))
 
 (defun outline-folder-p (node)
   "Return true if a node is a folder outline (no xmlUrl, has children
    outlines)."
-  (and (string-equal (plump:tag-name node) "outline")
+  (and (plump:element-p node)
+       (string-equal (plump:tag-name node) "outline")
        (not (plump:attribute node "xmlUrl"))
-       (plusp (length (plump:children node)))))
+       (plusp (length (remove-if-not #'plump:element-p (plump:children node))))))
 
 
 ;;; Parsing
@@ -111,10 +113,11 @@ xmlUrl=\"~A\" htmlUrl=\"\"/>~%"
 (defun find-body (document)
   "Find the <body> element by walking the document tree."
   (loop for child across (plump:children document)
-        thereis (and (string-equal (plump:tag-name child) "body")
+        thereis (and (plump:element-p child)
+                     (string-equal (plump:tag-name child) "body")
                      child)
-        thereis (when (plump:element-p child)
-                  (find-body child))))
+        thereis (and (plump:element-p child)
+                     (find-body child))))
 
 (defmethod backend:parse-feeds ((fmt (eql :opml)) strm)
   (let* ((document (plump:parse strm))
@@ -122,20 +125,21 @@ xmlUrl=\"~A\" htmlUrl=\"\"/>~%"
          (feeds (make-hash-table :test #'equal)))
     (when body
       (loop for child across (plump:children body)
-            when (string-equal (plump:tag-name child) "outline")
-              do (let ((result (parse-opml-element child)))
-                   (cond ((typep result 'backend:feed)
-                          (let ((folder
-                                 (backend:feed-folder result)))
-                            (push result
-                                  (gethash folder feeds))))
-                         ((listp result)
-                          (loop for feed in result
-                                do (let ((folder
-                                           (backend:feed-folder feed)))
-                                     (push feed
-                                           (gethash folder
-                                                    feeds)))))))))
+            when (and (plump:element-p child)
+                      (outline-feed-p child))
+              do (let* ((result (parse-opml-element child))
+                        (folder (if (typep result 'backend:feed)
+                                    (backend:feed-folder result)
+                                    nil)))
+                   (when (typep result 'backend:feed)
+                     (push result (gethash folder feeds))))
+            when (and (plump:element-p child)
+                      (outline-folder-p child))
+              do (let* ((result (parse-opml-element child)))
+                   (when (listp result)
+                     (loop for feed in result
+                           do (let ((folder (backend:feed-folder feed)))
+                                (push feed (gethash folder feeds))))))))
     feeds))
 
 

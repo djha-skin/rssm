@@ -41,15 +41,19 @@ and build scripts using Roswell, OCICL, and CLIFF.
   - `parse-feeds :newsboat` (6 tests)
   - `render-feeds :newsboat` (5 tests)
 
-### Next Up
+### Completed Work (Continued)
 
-- **`src/opml.lisp`**: Implement OPML import/export using Plump.
-  Needs both `parse-feeds :opml` and `render-feeds :opml` methods,
-  plus unit tests in `tests/opml.lisp`.
-
-- **`src/main.lisp`**: Wire up the CLI via CLIFF. Subcommands for
-  format conversion (e.g., `rssm export --from newsboat --to opml`).
-  Needs integration tests once backends are stable.
+- **`src/opml.lisp`**: OPML import/export using Plump. Fully implemented
+  with `parse-feeds :opml` and `render-feeds :opml` methods. Fixed
+  Plump DOM element checks to properly handle XML header and text nodes.
+- **`src/main.lisp`**: CLI via CLIFF with `convert` subcommand. Supports
+  converting between Newsboat, RSSSavvy JSON, and OPML formats. Features:
+  - File or string input/output
+  - CLI aliases for common options (-s, -d, -i, -o)
+  - Output to stdout (with `-o -`) or file
+  - Proper error handling and exit codes
+- **`tests/main.lisp`**: Integration tests for CLI conversion. 38 tests
+  covering all format combinations and round-trip conversions.
 
 ## Features
 
@@ -60,7 +64,7 @@ and build scripts using Roswell, OCICL, and CLIFF.
 - [x] **RSSSavvy JSON Support**
   - Import/Export functionality for RSSSavvy's JSON structure.
     Uses NRDL for JSON parsing and generation.
-- [ ] **OPML Support**
+- [x] **OPML Support**
   - Standard OPML import/export (Plump-based).
 - [ ] **Folder Management**
   - Implement single-level folder support across all formats.
@@ -70,10 +74,12 @@ and build scripts using Roswell, OCICL, and CLIFF.
 - [ ] **Heuristic Feed Discovery**
   - Take a blog URL and search for XML RSS/Atom feed URLs by guessing
     common locations (e.g., /feed, /rss, /atom.xml).
-- [ ] **Format Conversion**
+- [x] **Format Conversion**
   - Export feed lists from any of the three target formats to another.
-- [ ] **CLIFF Integration**
+  - Use `./rssm convert -s <format> -d <format> -i <input>`
+- [x] **CLIFF Integration**
   - Fully functional CLI with configuration file support.
+  - Use `./rssm help` for usage information.
 
 
 ---
