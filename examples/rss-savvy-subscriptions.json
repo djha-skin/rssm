@@ -1,0 +1,614 @@
+{
+  "rssfeeds": [
+    {
+      "title": "Welcome to Major's blog! on Major Hayden's Blog 🤠",
+      "url": "https:\/\/major.io\/index.xml",
+      "icon": "https:\/\/major.io\/favicon.ico"
+    },
+    {
+      "title": "Kubernetes",
+      "url": "https:\/\/kubernetes.io\/feed.xml",
+      "icon": "https:\/\/raw.githubusercontent.com\/kubernetes\/kubernetes\/master\/logo\/logo.png"
+    },
+    {
+      "title": "Matthias Endler",
+      "url": "https:\/\/endler.dev\/rss.xml",
+      "icon": "https:\/\/endler.dev\/favicon.ico"
+    },
+    {
+      "title": "Neowin",
+      "url": "http:\/\/feeds.feedburner.com\/neowin-main",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/neowinnews.png"
+    },
+    {
+      "title": "Hurry Up and Wait!",
+      "url": "http:\/\/feeds.feedburner.com\/Wrockblog",
+      "icon": ""
+    },
+    {
+      "title": "Uber Engineering Blog",
+      "url": "https:\/\/eng.uber.com\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Servo Blog",
+      "url": "https:\/\/blog.servo.org\/feed.xml",
+      "icon": ""
+    },
+    {
+      "title": "Stack Overflow Blog",
+      "url": "https:\/\/stackoverflow.blog\/feed",
+      "icon": "https:\/\/stackoverflow.blog\/wp-content\/uploads\/2017\/03\/cropped-SO_Logo_glyph-use-this-one-smaller-32x32.jpg"
+    },
+    {
+      "title": "the morning paper",
+      "url": "https:\/\/blog.acolyer.org\/feed",
+      "icon": "https:\/\/blog.acolyer.org\/favicon.ico"
+    },
+    {
+      "title": "Sander Knape on Sander Knape",
+      "url": "https:\/\/sanderknape.com\/index.xml",
+      "icon": "https:\/\/sanderknape.com\/favicon.ico"
+    },
+    {
+      "title": "Daemonic Dispatches",
+      "url": "http:\/\/www.daemonology.net\/blog\/index.rss",
+      "icon": "http:\/\/www.daemonology.net\/favicon.ico"
+    },
+    {
+      "title": "Telegraph - World News",
+      "url": "http:\/\/www.telegraph.co.uk\/news\/worldnews\/rss",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/telegraph.jpg"
+    },
+    {
+      "title": "Practical Business Python",
+      "url": "https:\/\/pbpython.com\/feeds\/all.atom.xml",
+      "icon": "https:\/\/pbpython.com\/favicon.ico"
+    },
+    {
+      "title": "Scott's Weblog",
+      "url": "http:\/\/feeds.scottlowe.org\/slowe\/content\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Nedroid",
+      "url": "http:\/\/nedroid.com\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Technology | Reuters News Agency",
+      "url": "https:\/\/www.reutersagency.com\/feed\/?best-topics=tech&post_type=best",
+      "icon": "https:\/\/www.reutersagency.com\/wp-content\/uploads\/2019\/06\/fav-150x150.png"
+    },
+    {
+      "title": "Stefan Scherer's Blog",
+      "url": "https:\/\/stefanscherer.github.io\/rss",
+      "icon": "https:\/\/stefanscherer.github.io\/favicon.ico"
+    },
+    {
+      "title": "TechCrunch",
+      "url": "http:\/\/feeds.feedburner.com\/Techcrunch",
+      "icon": ""
+    },
+    {
+      "title": "metablog",
+      "url": "https:\/\/blog.metaobject.com\/feeds\/posts\/default",
+      "icon": ""
+    },
+    {
+      "title": "Business Insider",
+      "url": "http:\/\/feeds2.feedburner.com\/businessinsider",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/business-insider-white-border2.png"
+    },
+    {
+      "title": "Planet Clojure",
+      "url": "http:\/\/planet.clojure.in\/atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Ostash.Dev",
+      "url": "https:\/\/ostash.dev\/index.xml",
+      "icon": ""
+    },
+    {
+      "title": "Consolia",
+      "url": "https:\/\/consolia-comic.com\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "Python",
+      "url": "https:\/\/devblogs.microsoft.com\/python\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Michael's Coding Spot",
+      "url": "https:\/\/michaelscodingspot.com\/feed",
+      "icon": "https:\/\/michaelscodingspot.com\/wp-content\/uploads\/2017\/01\/cropped-stillOnWhite4-transparent-big-32x32.png"
+    },
+    {
+      "title": "Yelp Engineering and Product Blog",
+      "url": "https:\/\/engineeringblog.yelp.com\/feed.xml",
+      "icon": "https:\/\/engineeringblog.yelp.com\/favicon.ico"
+    },
+    {
+      "title": "blog :: Brent -> [String]",
+      "url": "https:\/\/byorgey.wordpress.com\/feed",
+      "icon": "https:\/\/byorgey.wordpress.com\/favicon.ico"
+    },
+    {
+      "title": "Scattered Thoughts",
+      "url": "https:\/\/scattered-thoughts.net\/atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Reuters News Agency",
+      "url": "https:\/\/www.reutersagency.com\/feed\/?taxonomy=best-topics&post_type=best",
+      "icon": "https:\/\/www.reutersagency.com\/wp-content\/uploads\/2019\/06\/fav-150x150.png"
+    },
+    {
+      "title": "CBC | Technology News",
+      "url": "https:\/\/www.cbc.ca\/cmlink\/rss-technology",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/cbc.png"
+    },
+    {
+      "title": "Technology Conversations",
+      "url": "https:\/\/technologyconversations.com\/feed",
+      "icon": "https:\/\/technologyconversations.com\/favicon.ico"
+    },
+    {
+      "title": "SoundCloud Backstage Blog",
+      "url": "https:\/\/developers.soundcloud.com\/blog\/blog.rss",
+      "icon": ""
+    },
+    {
+      "title": "Podcast – Software Engineering Daily",
+      "url": "https:\/\/softwareengineeringdaily.com\/category\/podcast\/feed",
+      "icon": "http:\/\/softwaredaily.wpengine.com\/wp-content\/uploads\/powerpress\/SED_square_solid_bg.png"
+    },
+    {
+      "title": "The Observation Deck",
+      "url": "http:\/\/dtrace.org\/blogs\/bmc\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Digital Trends",
+      "url": "http:\/\/www.digitaltrends.com\/feed",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/digital-trends.jpg"
+    },
+    {
+      "title": "Eric Normand's Website",
+      "url": "https:\/\/ericnormand.me\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "Business & Finance | Reuters News Agency",
+      "url": "https:\/\/www.reutersagency.com\/feed\/?best-topics=business-finance&post_type=best",
+      "icon": "https:\/\/www.reutersagency.com\/wp-content\/uploads\/2019\/06\/fav-150x150.png"
+    },
+    {
+      "title": "Netflix TechBlog - Medium",
+      "url": "https:\/\/medium.com\/feed\/netflix-techblog",
+      "icon": ""
+    },
+    {
+      "title": "MonkeyUser",
+      "url": "https:\/\/www.monkeyuser.com\/feed.xml",
+      "icon": "https:\/\/www.monkeyuser.com\/favicon.ico"
+    },
+    {
+      "title": "WION - science technology News Releases",
+      "url": "https:\/\/www.wionews.com\/feeds\/science-technology\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "The JUXT Blog",
+      "url": "https:\/\/www.juxt.pro\/blog\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "Drew DeVault's blog",
+      "url": "https:\/\/drewdevault.com\/blog\/index.xml",
+      "icon": ""
+    },
+    {
+      "title": "Steve Klabnik",
+      "url": "https:\/\/feeds.feedburner.com\/steveklabnik\/words",
+      "icon": ""
+    },
+    {
+      "title": "Technodrone",
+      "url": "https:\/\/technodrone.blogspot.com\/feeds\/posts\/default",
+      "icon": "https:\/\/technodrone.blogspot.com\/favicon.ico"
+    },
+    {
+      "title": "Gruntwork - Medium",
+      "url": "https:\/\/blog.gruntwork.io\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Simon Willison's Weblog",
+      "url": "https:\/\/simonwillison.net\/atom\/everything",
+      "icon": ""
+    },
+    {
+      "title": "Eli Bendersky's website",
+      "url": "https:\/\/eli.thegreenplace.net\/feeds\/all.atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Dion Almaer",
+      "url": "https:\/\/blog.almaer.com\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Airs – Ian Lance Taylor",
+      "url": "https:\/\/www.airs.com\/blog\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Politics | Reuters News Agency",
+      "url": "https:\/\/www.reutersagency.com\/feed\/?best-topics=political-general&post_type=best",
+      "icon": "https:\/\/www.reutersagency.com\/wp-content\/uploads\/2019\/06\/fav-150x150.png"
+    },
+    {
+      "title": "research!rsc",
+      "url": "http:\/\/research.swtch.com\/feed.atom",
+      "icon": ""
+    },
+    {
+      "title": "FOX News",
+      "url": "http:\/\/feeds.foxnews.com\/foxnews\/latest",
+      "icon": "http:\/\/www.foxnews.com\/favicon.ico"
+    },
+    {
+      "title": "Ned Batchelder's blog",
+      "url": "https:\/\/nedbatchelder.com\/blog\/rss.xml",
+      "icon": "https:\/\/nedbatchelder.com\/favicon.ico"
+    },
+    {
+      "title": "Hexops’ devlog",
+      "url": "https:\/\/devlog.hexops.com\/feed",
+      "icon": "https:\/\/devlog.hexops.com\/favicon.ico"
+    },
+    {
+      "title": "Bloomberg",
+      "url": "http:\/\/www.newslookup.com\/rss\/business\/bloomberg.rss",
+      "icon": ""
+    },
+    {
+      "title": "Benji's Blog",
+      "url": "https:\/\/benjiweber.co.uk\/blog\/feed",
+      "icon": "https:\/\/benjiweber.co.uk\/favicon.ico"
+    },
+    {
+      "title": "Newest Python PEPs",
+      "url": "https:\/\/www.python.org\/dev\/peps\/peps.rss",
+      "icon": "https:\/\/www.python.org\/favicon.ico"
+    },
+    {
+      "title": "Posts on djhworld",
+      "url": "https:\/\/djhworld.github.io\/post\/index.xml",
+      "icon": "https:\/\/djhworld.github.io\/favicon.ico"
+    },
+    {
+      "title": "BBC World News",
+      "url": "http:\/\/feeds.bbci.co.uk\/news\/world\/rss.xml",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/bbc.png"
+    },
+    {
+      "title": "RSS Savvy Updates",
+      "url": "http:\/\/savvysaurus.com\/rss\/rss-savvy-android-1.0.xml",
+      "icon": ""
+    },
+    {
+      "title": "CNN.com - Top Stories",
+      "url": "http:\/\/rss.cnn.com\/rss\/cnn_topstories.rss",
+      "icon": "http:\/\/www.cnn.com\/favicon.ico"
+    },
+    {
+      "title": "rendezvous with cassidoo",
+      "url": "https:\/\/buttondown.email\/cassidoo\/rss",
+      "icon": "https:\/\/buttondown.email\/favicon.ico"
+    },
+    {
+      "title": "  Bartosz Milewski's Programming Cafe",
+      "url": "https:\/\/bartoszmilewski.com\/feed",
+      "icon": "https:\/\/bartoszmilewski.com\/favicon.ico"
+    },
+    {
+      "title": "BlazingDB - Medium",
+      "url": "https:\/\/blog.blazingdb.com\/feed",
+      "icon": ""
+    },
+    {
+      "title": "Engadget RSS Feed",
+      "url": "https:\/\/www.engadget.com\/rss.xml",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/engadget_icon2.png"
+    },
+    {
+      "title": "text\/plain",
+      "url": "https:\/\/textslashplain.com\/rss",
+      "icon": "https:\/\/secure.gravatar.com\/blavatar\/81e8313019076ebc4ae53e207f1dc691?s=96&d=https%3A%2F%2Fs0.wp.com%2Fi%2Fbuttonw-com.png"
+    },
+    {
+      "title": "The Go Programming Language Blog",
+      "url": "https:\/\/blog.golang.org\/feed.atom",
+      "icon": ""
+    },
+    {
+      "title": "The Crystal Programming Language",
+      "url": "https:\/\/crystal-lang.org\/feed.xml",
+      "icon": "https:\/\/crystal-lang.org\/favicon.ico"
+    },
+    {
+      "title": "Al Jazeera English",
+      "url": "https:\/\/www.aljazeera.com\/xml\/rss\/all.xml",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/aljazeera.png"
+    },
+    {
+      "title": "Code Without Rules",
+      "url": "https:\/\/codewithoutrules.com\/atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Clojure News",
+      "url": "https:\/\/clojure.org\/feed.xml",
+      "icon": ""
+    },
+    {
+      "title": "CBC | World News",
+      "url": "https:\/\/www.cbc.ca\/cmlink\/rss-world",
+      "icon": "http:\/\/savvysaurus.com\/rss\/icons\/cbc.png"
+    },
+    {
+      "title": "Martin Fowler",
+      "url": "https:\/\/martinfowler.com\/feed.atom",
+      "icon": "https:\/\/martinfowler.com\/favicon.ico"
+    },
+    {
+      "title": "Ars Technica",
+      "url": "http:\/\/feeds.arstechnica.com\/arstechnica\/index\/",
+      "icon": "https:\/\/cdn.arstechnica.net\/wp-content\/uploads\/2016\/10\/cropped-ars-logo-512_480-32x32.png"
+    },
+    {
+      "title": "Andrew Kelley",
+      "url": "https:\/\/andrewkelley.me\/rss.xml",
+      "icon": "https:\/\/s3.amazonaws.com\/superjoe\/blog-files\/profile-48x58.jpg"
+    },
+    {
+      "title": "composition.al",
+      "url": "http:\/\/composition.al\/atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Business",
+      "url": "http:\/\/www.economist.com\/rss\/business_rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "WION - business economy News Releases",
+      "url": "https:\/\/www.wionews.com\/feeds\/business-economy\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "Random Crab",
+      "url": "https:\/\/randomcrab.com\/feed",
+      "icon": "https:\/\/randomcrab.com\/wp-content\/uploads\/2018\/04\/cropped-randomcrab-icon-new-32x32.png"
+    },
+    {
+      "title": "eBay Tech Blog",
+      "url": "https:\/\/tech.ebayinc.com\/rss",
+      "icon": ""
+    },
+    {
+      "title": "Dgraph Blog",
+      "url": "https:\/\/dgraph.io\/blog\/index.xml",
+      "icon": "https:\/\/dgraph.io\/favicon.ico"
+    },
+    {
+      "title": "Metadata",
+      "url": "http:\/\/muratbuffalo.blogspot.com\/feeds\/posts\/default",
+      "icon": "http:\/\/muratbuffalo.blogspot.com\/favicon.ico"
+    },
+    {
+      "title": "Andrzej's C++ blog",
+      "url": "https:\/\/akrzemi1.wordpress.com\/feed",
+      "icon": "https:\/\/akrzemi1.wordpress.com\/favicon.ico"
+    },
+    {
+      "title": "Golang News",
+      "url": "https:\/\/golangnews.com\/index.xml",
+      "icon": "https:\/\/golangnews.com\/favicon.ico"
+    },
+    {
+      "title": "WION - world News Releases",
+      "url": "https:\/\/www.wionews.com\/feeds\/world\/rss.xml",
+      "icon": ""
+    },
+    {
+      "title": "Tomasz Tunguz",
+      "url": "https:\/\/tomtunguz.com\/index.xml",
+      "icon": "https:\/\/tomtunguz.com\/favicon.ico"
+    },
+    {
+      "title": "BrianChristner.io",
+      "url": "https:\/\/brianchristner.io\/rss",
+      "icon": "https:\/\/brianchristner.io\/favicon.png"
+    },
+    {
+      "title": "Reuters News Agency",
+      "url": "https:\/\/www.reutersagency.com\/feed\/?post_type=reuters-best",
+      "icon": "https:\/\/www.reutersagency.com\/wp-content\/uploads\/2019\/06\/fav-150x150.png"
+    },
+    {
+      "title": "Stories by Cindy Sridharan on Medium",
+      "url": "https:\/\/medium.com\/feed\/@copyconstruct",
+      "icon": "https:\/\/cdn-images-1.medium.com\/fit\/c\/150\/150\/1*qO8507PXndPzq2TSZjYlAw.jpeg"
+    },
+    {
+      "title": "tonsky.me",
+      "url": "https:\/\/tonsky.me\/blog\/atom.xml",
+      "icon": ""
+    },
+    {
+      "title": "Wired",
+      "url": "http:\/\/feeds.wired.com\/wired\/index",
+      "icon": "http:\/\/www.wired.com\/favicon.ico"
+    },
+    {
+      "title": "XKCD",
+      "url": "https:\/\/xkcd.com\/atom.xml",
+      "icon": "https:\/\/xkcd.com\/favicon.ico"
+    },
+    {
+      "title": "Dave Cheney",
+      "url": "https:\/\/dave.cheney.net\/feed",
+      "icon": ""
+    }
+  ],
+  "groups": [
+    {
+      "title": "Hub",
+      "icon": "asset:\/\/\/images\/ic_bbdots.png",
+      "id": -1348187134,
+      "filters": [
+        "RS http:\/\/savvysaurus.com\/rss\/rss-savvy-android-1.0.xml"
+      ]
+    },
+    {
+      "title": "DevOps",
+      "icon": "asset:\/\/\/images\/ic_d.png",
+      "id": 1413223314,
+      "filters": [
+        "RS http:\/\/feeds.feedburner.com\/Wrockblog",
+        "RS http:\/\/feeds.scottlowe.org\/slowe\/content\/feed",
+        "RS https:\/\/blog.gruntwork.io\/feed",
+        "RS https:\/\/brianchristner.io\/rss",
+        "RS https:\/\/developers.soundcloud.com\/blog\/blog.rss",
+        "RS https:\/\/eng.uber.com\/feed",
+        "RS https:\/\/engineeringblog.yelp.com\/feed.xml",
+        "RS https:\/\/kubernetes.io\/feed.xml",
+        "RS https:\/\/medium.com\/feed\/@copyconstruct",
+        "RS https:\/\/medium.com\/feed\/netflix-techblog",
+        "RS https:\/\/sanderknape.com\/index.xml",
+        "RS https:\/\/stefanscherer.github.io\/rss",
+        "RS https:\/\/tech.ebayinc.com\/rss",
+        "RS https:\/\/technodrone.blogspot.com\/feeds\/posts\/default",
+        "RS https:\/\/technologyconversations.com\/feed",
+        "RS https:\/\/major.io\/index.xml"
+      ]
+    },
+    {
+      "title": "Development",
+      "icon": "asset:\/\/\/images\/ic_d.png",
+      "id": -183162443,
+      "filters": [
+        "RS http:\/\/composition.al\/atom.xml",
+        "RS http:\/\/dtrace.org\/blogs\/bmc\/feed",
+        "RS http:\/\/muratbuffalo.blogspot.com\/feeds\/posts\/default",
+        "RS http:\/\/research.swtch.com\/feed.atom",
+        "RS http:\/\/www.daemonology.net\/blog\/index.rss",
+        "RS https:\/\/akrzemi1.wordpress.com\/feed",
+        "RS https:\/\/andrewkelley.me\/rss.xml",
+        "RS https:\/\/bartoszmilewski.com\/feed",
+        "RS https:\/\/benjiweber.co.uk\/blog\/feed",
+        "RS https:\/\/blog.acolyer.org\/feed",
+        "RS https:\/\/blog.almaer.com\/feed",
+        "RS https:\/\/blog.blazingdb.com\/feed",
+        "RS https:\/\/blog.golang.org\/feed.atom",
+        "RS https:\/\/blog.servo.org\/feed.xml",
+        "RS https:\/\/byorgey.wordpress.com\/feed",
+        "RS https:\/\/codewithoutrules.com\/atom.xml",
+        "RS https:\/\/crystal-lang.org\/feed.xml",
+        "RS https:\/\/dave.cheney.net\/feed",
+        "RS https:\/\/devblogs.microsoft.com\/python\/feed",
+        "RS https:\/\/dgraph.io\/blog\/index.xml",
+        "RS https:\/\/djhworld.github.io\/post\/index.xml",
+        "RS https:\/\/eli.thegreenplace.net\/feeds\/all.atom.xml",
+        "RS https:\/\/endler.dev\/rss.xml",
+        "RS https:\/\/feeds.feedburner.com\/steveklabnik\/words",
+        "RS https:\/\/golangnews.com\/index.xml",
+        "RS https:\/\/martinfowler.com\/feed.atom",
+        "RS https:\/\/michaelscodingspot.com\/feed",
+        "RS https:\/\/nedbatchelder.com\/blog\/rss.xml",
+        "RS https:\/\/pbpython.com\/feeds\/all.atom.xml",
+        "RS https:\/\/simonwillison.net\/atom\/everything",
+        "RS https:\/\/stackoverflow.blog\/feed",
+        "RS https:\/\/tomtunguz.com\/index.xml",
+        "RS https:\/\/tonsky.me\/blog\/atom.xml",
+        "RS https:\/\/www.airs.com\/blog\/feed",
+        "RS https:\/\/www.python.org\/dev\/peps\/peps.rss",
+        "RS https:\/\/textslashplain.com\/rss",
+        "RS https:\/\/drewdevault.com\/blog\/index.xml",
+        "RS https:\/\/softwareengineeringdaily.com\/category\/podcast\/feed",
+        "RS https:\/\/devlog.hexops.com\/feed",
+        "RS https:\/\/ostash.dev\/index.xml",
+        "RS https:\/\/blog.metaobject.com\/feeds\/posts\/default",
+        "RS https:\/\/scattered-thoughts.net\/atom.xml",
+        "RS https:\/\/buttondown.email\/cassidoo\/rss",
+        "RS https:\/\/www.juxt.pro\/blog\/rss.xml",
+        "RS http:\/\/planet.clojure.in\/atom.xml",
+        "RS https:\/\/ericnormand.me\/rss.xml",
+        "RS https:\/\/clojure.org\/feed.xml"
+      ]
+    },
+    {
+      "title": "Comics",
+      "icon": "asset:\/\/\/images\/ic_c.png",
+      "id": -1225270159,
+      "filters": [
+        "RS http:\/\/nedroid.com\/feed",
+        "RS https:\/\/consolia-comic.com\/rss.xml",
+        "RS https:\/\/randomcrab.com\/feed",
+        "RS https:\/\/www.monkeyuser.com\/feed.xml",
+        "RS https:\/\/xkcd.com\/atom.xml"
+      ]
+    },
+    {
+      "title": "News",
+      "icon": "asset:\/\/\/images\/ic_n.png",
+      "id": 1651126006,
+      "filters": [
+        "RS http:\/\/feeds.bbci.co.uk\/news\/world\/rss.xml",
+        "RS https:\/\/www.cbc.ca\/cmlink\/rss-world",
+        "RS https:\/\/www.reutersagency.com\/feed\/?taxonomy=best-topics&post_type=best",
+        "RS https:\/\/www.reutersagency.com\/feed\/?best-topics=tech&post_type=best",
+        "RS https:\/\/www.reutersagency.com\/feed\/?best-topics=political-general&post_type=best",
+        "RS https:\/\/www.reutersagency.com\/feed\/?best-topics=business-finance&post_type=best",
+        "RS https:\/\/www.reutersagency.com\/feed\/?post_type=reuters-best",
+        "RS http:\/\/feeds.foxnews.com\/foxnews\/latest",
+        "RS http:\/\/www.telegraph.co.uk\/news\/worldnews\/rss",
+        "RS https:\/\/www.aljazeera.com\/xml\/rss\/all.xml",
+        "RS https:\/\/www.wionews.com\/feeds\/world\/rss.xml",
+        "RS http:\/\/rss.cnn.com\/rss\/cnn_topstories.rss"
+      ]
+    },
+    {
+      "title": "Technology",
+      "icon": "asset:\/\/\/images\/ic_t.png",
+      "id": 1683812800,
+      "filters": [
+        "RS https:\/\/www.engadget.com\/rss.xml",
+        "RS http:\/\/www.digitaltrends.com\/feed",
+        "RS http:\/\/feeds.feedburner.com\/Techcrunch",
+        "RS https:\/\/www.wionews.com\/feeds\/science-technology\/rss.xml",
+        "RS https:\/\/www.cbc.ca\/cmlink\/rss-technology",
+        "RS http:\/\/feeds.arstechnica.com\/arstechnica\/index\/",
+        "RS http:\/\/feeds.feedburner.com\/neowin-main",
+        "RS http:\/\/feeds.wired.com\/wired\/index"
+      ]
+    },
+    {
+      "title": "Business",
+      "icon": "asset:\/\/\/images\/ic_b.png",
+      "id": 1684425880,
+      "filters": [
+        "RS https:\/\/www.wionews.com\/feeds\/business-economy\/rss.xml",
+        "RS http:\/\/www.newslookup.com\/rss\/business\/bloomberg.rss",
+        "RS http:\/\/feeds2.feedburner.com\/businessinsider",
+        "RS http:\/\/www.economist.com\/rss\/business_rss.xml"
+      ]
+    }
+  ],
+  "userid": "DVC--2142131605"
+}
