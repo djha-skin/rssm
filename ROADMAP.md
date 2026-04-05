@@ -24,6 +24,12 @@ and build scripts using Roswell, OCICL, and CLIFF.
     `:test` in `make-hash-table`; fixed to `'equal`.
 - **`tests/newsboat.lisp`**: Full unit test suite written for
   `src/newsboat.lisp`. 66 assertions, all passing. Covers:
+- **`src/rsssavvy.lisp`**: RSSSavvy JSON parser and renderer using NRDL.
+  Fully implemented with helper functions (`filter-to-url`,
+  `rsssavvy-group-to-folder`, `rsssavvy-folder-of-url`, etc.) and
+  backend methods for `parse-feeds` and `render-feeds`.
+- **`tests/rsssavvy.lisp`**: Full unit test suite for RSSSavvy support.
+  39 assertions, all passing. Covers:
   - `read-quoted` (6 tests)
   - `render-quoted` (4 tests)
   - Round-trip `read-quoted` / `render-quoted` (2 tests)
@@ -40,9 +46,7 @@ and build scripts using Roswell, OCICL, and CLIFF.
 - **`src/opml.lisp`**: Implement OPML import/export using Plump.
   Needs both `parse-feeds :opml` and `render-feeds :opml` methods,
   plus unit tests in `tests/opml.lisp`.
-- **`src/rsssavvy.lisp`**: RSSSavvy JSON import/export.
-  Needs both `parse-feeds :rsssavvy` and `render-feeds :rsssavvy`
-  methods, plus unit tests in `tests/rsssavvy.lisp`.
+
 - **`src/main.lisp`**: Wire up the CLI via CLIFF. Subcommands for
   format conversion (e.g., `rssm export --from newsboat --to opml`).
   Needs integration tests once backends are stable.
@@ -53,8 +57,9 @@ and build scripts using Roswell, OCICL, and CLIFF.
   - Parse `urls` files.
   - Handle virtual feeds, queries, and tags.
   - Unit tests (66 passing).
-- [ ] **RSSSavvy JSON Support**
+- [x] **RSSSavvy JSON Support**
   - Import/Export functionality for RSSSavvy's JSON structure.
+    Uses NRDL for JSON parsing and generation.
 - [ ] **OPML Support**
   - Standard OPML import/export (Plump-based).
 - [ ] **Folder Management**

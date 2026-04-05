@@ -21,7 +21,6 @@ cl-base64, ghcr.io/ocicl/cl-base64@sha256:702412dbc1ed825e275fb23e22c29527eb786b
 cl-base64-tests, ghcr.io/ocicl/cl-base64@sha256:702412dbc1ed825e275fb23e22c29527eb786bf644e47c7621bf0dbb34e17c7e, cl-base64-20240503-80496b7/cl-base64-tests.asd
 cl-cookie, ghcr.io/ocicl/cl-cookie@sha256:e744cbdf86e2f62b875dbb817a44da06d572a3066bafa08e347671ca7b1bdadf, cl-cookie-20260321-8a2fb71/cl-cookie.asd
 cl-cookie-test, ghcr.io/ocicl/cl-cookie@sha256:e744cbdf86e2f62b875dbb817a44da06d572a3066bafa08e347671ca7b1bdadf, cl-cookie-20260321-8a2fb71/cl-cookie-test.asd
-cl-fad, ghcr.io/ocicl/cl-fad@sha256:c0aaffc859e419e0a94cedb08f48c2484da404363fb0fe4ffd6e09a80aadafe1, cl-fad-0.7.6/cl-fad.asd
 cl-mcp, ghcr.io/ocicl/cl-mcp@sha256:a55e3bbe2f6a3fff66adf700ca3e68ef27c87ce5a924b39ae8c025fdcd729731, cl-mcp-20260405-ac39ed3/cl-mcp.asd
 cl-postgres_plus_local-time, ghcr.io/ocicl/local-time@sha256:15dc0e56d0ff55bd2a3c597e67be1c26bd0677c230a15ad5098c5207a9df5554, local-time-20250808-c28f38e/cl-postgres+local-time.asd
 cl-ppcre, ghcr.io/ocicl/cl-ppcre@sha256:bf073924cf4fd5957a4fd961a95d446ed0e53fa32a5002cbd2d52182874f45e5, cl-ppcre-20250606-a2ea581/cl-ppcre.asd
@@ -92,8 +91,6 @@ trivia.ppcre, ghcr.io/ocicl/trivia@sha256:51db74757bc31ceaf3a643914a8ffa87825799
 trivia.quasiquote, ghcr.io/ocicl/trivia@sha256:51db74757bc31ceaf3a643914a8ffa87825799097dea4912650e6ac62bed5209, trivia-20240904-4383dd8/trivia.quasiquote.asd
 trivia.test, ghcr.io/ocicl/trivia@sha256:51db74757bc31ceaf3a643914a8ffa87825799097dea4912650e6ac62bed5209, trivia-20240904-4383dd8/trivia.test.asd
 trivia.trivial, ghcr.io/ocicl/trivia@sha256:51db74757bc31ceaf3a643914a8ffa87825799097dea4912650e6ac62bed5209, trivia-20240904-4383dd8/trivia.trivial.asd
-trivial-backtrace, ghcr.io/ocicl/trivial-backtrace@sha256:89a3138695bb767c50001402fad60dacfc1e867e4e3d3579cc6f636d3e29a51c, trivial-backtrace-20240503-7f90b4a/trivial-backtrace.asd
-trivial-backtrace-test, ghcr.io/ocicl/trivial-backtrace@sha256:89a3138695bb767c50001402fad60dacfc1e867e4e3d3579cc6f636d3e29a51c, trivial-backtrace-20240503-7f90b4a/trivial-backtrace-test.asd
 trivial-cltl2, ghcr.io/ocicl/trivial-cltl2@sha256:69470b4f6469314799074b9d944050dc4bcb67d5cbb2ba32c7a8899bb492f04e, trivial-cltl2-20230809-2ada872/trivial-cltl2.asd
 trivial-custom-debugger, ghcr.io/ocicl/trivial-custom-debugger@sha256:b72a9d829d2635982c5d07604c24b22158cb550cd6b2915df2280ae59922be11, trivial-custom-debugger-20240503-802473c/trivial-custom-debugger.asd
 trivial-features, ghcr.io/ocicl/trivial-features@sha256:e278e24d39060fc7d3715531b16ddd9ab7f93f22ade53e436c0b86dbae3aa065, trivial-features-1.0/trivial-features.asd
