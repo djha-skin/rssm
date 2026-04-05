@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Exported from RSSM</title>
+  </head>
+  <body>
+        <outline text="development" title="development">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://clojure.org/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://ericnormand.me/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://planet.lisp.org/rss20.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://planet.clojure.in/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.juxt.pro/blog/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://buttondown.email/cassidoo/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://scattered-thoughts.net/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.metaobject.com/feeds/posts/default" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://ostash.dev/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://devlog.hexops.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://softwareengineeringdaily.com/category/podcast/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://drewdevault.com/blog/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://textslashplain.com/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.python.org/dev/peps/peps.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.airs.com/blog/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://tonsky.me/blog/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://tomtunguz.com/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://stackoverflow.blog/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://pbpython.com/feeds/all.atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://nedbatchelder.com/blog/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://michaelscodingspot.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://martinfowler.com/feed.atom" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://golangnews.com/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://feeds.feedburner.com/steveklabnik/words" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://endler.dev/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://eli.thegreenplace.net/feeds/all.atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://djhworld.github.io/post/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://dgraph.io/blog/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://devblogs.microsoft.com/python/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://dave.cheney.net/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://crystal-lang.org/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://codewithoutrules.com/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://byorgey.wordpress.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.servo.org/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.golang.org/feed.atom" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.blazingdb.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.almaer.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.acolyer.org/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://benjiweber.co.uk/blog/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://bartoszmilewski.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://andrewkelley.me/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://akrzemi1.wordpress.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://www.daemonology.net/blog/index.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://research.swtch.com/feed.atom" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://muratbuffalo.blogspot.com/feeds/posts/default" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://dtrace.org/blogs/bmc/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://composition.al/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://reasonableapproximation.net/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://kmcd.dev/posts/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://notes.eatonphil.com/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://andrew.gibiansky.com/feed.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://samwho.dev/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://matt.sh/.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.evalapply.org/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://formal.land/blog/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://kevingal.com/feed.xml" htmlUrl=""/>
+        </outline>
+        <outline text="muted" title="muted">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://simonwillison.net/atom/everything" htmlUrl=""/>
+        </outline>
+        <outline text="devops" title="devops">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://major.io/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://technodrone.blogspot.com/feeds/posts/default" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://tech.ebayinc.com/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://stefanscherer.github.io/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://sanderknape.com/index.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://medium.com/feed/netflix-techblog" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://medium.com/feed/@copyconstruct" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://kubernetes.io/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://engineeringblog.yelp.com/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://eng.uber.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://developers.soundcloud.com/blog/blog.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://brianchristner.io/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://blog.gruntwork.io/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.scottlowe.org/slowe/content/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.feedburner.com/Wrockblog" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.hashicorp.com/blog/feed.xml" htmlUrl=""/>
+        </outline>
+        <outline text="business" title="business">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://www.economist.com/rss/business_rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds2.feedburner.com/businessinsider" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://www.newslookup.com/rss/business/bloomberg.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.wionews.com/feeds/business-economy/rss.xml" htmlUrl=""/>
+        </outline>
+        <outline text="tech" title="tech">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.wired.com/wired/index" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.feedburner.com/neowin-main" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.arstechnica.com/arstechnica/index/" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.cbc.ca/cmlink/rss-technology" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.wionews.com/feeds/science-technology/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.feedburner.com/Techcrunch" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://www.digitaltrends.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.engadget.com/rss.xml" htmlUrl=""/>
+        </outline>
+        <outline text="comics" title="comics">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://xkcd.com/atom.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.monkeyuser.com/feed.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://randomcrab.com/feed" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://consolia-comic.com/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://nedroid.com/feed" htmlUrl=""/>
+        </outline>
+        <outline text="news" title="news">
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://rss.cnn.com/rss/cnn_topstories.rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.wionews.com/feeds/world/rss.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.aljazeera.com/xml/rss/all.xml" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://www.telegraph.co.uk/news/worldnews/rss" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.foxnews.com/foxnews/latest" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.reutersagency.com/feed/?post_type=reuters-best" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.reutersagency.com/feed/?best-topics=political-general&post_type=best" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.reutersagency.com/feed/?best-topics=tech&post_type=best" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="https://www.cbc.ca/cmlink/rss-world" htmlUrl=""/>
+          <outline type="rss" text="Unknown" title="Unknown" xmlUrl="http://feeds.bbci.co.uk/news/world/rss.xml" htmlUrl=""/>
+        </outline>
+  </body>
+</opml>

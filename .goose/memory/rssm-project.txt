@@ -1,0 +1,23 @@
+# # rssm project common-lisp overviewrssm tooling roswell ocicl testing
+
+RSSM (RSS Manager) project at /home/skin/Code/djha-skin/rssm. Common Lisp CLI tool for converting RSS feed lists between Newsboat urls format, RSSSavvy JSON, and OPML. Stack: Roswell, OCICL (NOT Quicklisp), ASDF, CLIFF (CLI), Parachute (tests), Serapeum, Plump (OPML XML). Package: com.djhaskin.rssm. Reverse-domain naming convention. 80-char line limit on ALL files (.lisp, .md, .ros). One-level folders only — no nesting.RSSM tooling rules: Always use `ros +Q` to disable Quicklisp (never omit +Q). One-shot Lisp evaluation: tools/one-shot-lisp.ros '(expr)'. REPL in tmux pane 0 (ros run), Goose in pane 1, manual in pane 2. Tests use Parachute: define-test, is, true, false, fail, of-type, finish. Run tests from shell: ros +Q -- --eval '(asdf:test-system "com.djhaskin.rssm")' --eval '(uiop:quit)'. Add dependencies with: ocicl install <name>. If weird compile errors: rm -rf ocicl/ && ocicl install.
+
+
+
+# rssm progress status roadmap
+RSSM progress status (as of 2026-04-05):
+DONE:
+- src/backend.lisp: stable, no changes needed
+- src/newsboat.lisp: fully implemented, 3 bugs fixed (wrong initarg :custom-name→:title; aref out-of-bounds on bare "!"; make-hash-table :test #'string=→'equal)
+- tests/newsboat.lisp: 66 tests, all passing
+
+NEXT UP (in order):
+1. src/opml.lisp — implement parse-feeds :opml and render-feeds :opml using Plump; write tests/opml.lisp
+2. src/rsssavvy.lisp — implement parse-feeds :rsssavvy and render-feeds :rsssavvy; write tests/rsssavvy.lisp
+3. src/main.lisp — wire up CLI via CLIFF for format conversion subcommands
+
+FUTURE (ROADMAP):
+- Automated feed cleanup (feeds inactive >5 years)
+- Heuristic feed discovery (blog URL → RSS/Atom URL)
+- Full format conversion CLI
+

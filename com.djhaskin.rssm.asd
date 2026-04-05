@@ -30,9 +30,11 @@
                 :components
                 ((:file "main")
                  (:file "backend")
-                 (:file "newsboat"))))
+                 (:file "newsboat")
+                 (:file "opml"))))
   :description "Test system for RSSM"
  :perform (asdf:test-op (op c)
                     (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests)
                     (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/backend)
-                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/newsboat)))
+                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/newsboat)
+                    (uiop:symbol-call :parachute :test '#:com.djhaskin.rssm/tests/opml)))
